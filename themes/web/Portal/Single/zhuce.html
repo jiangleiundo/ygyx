@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<link href="__HOME__/css/bootstrap.min.css" rel='stylesheet' type='text/css' media="all" />
+		<!-- //bootstrap -->
+		<link href="__HOME__/css/dashboard.css" rel="stylesheet">
+		<!-- Custom Theme files -->
+		<link href="__HOME__/css/style.css" rel='stylesheet' type='text/css' media="all" />
+
+		<!--start-smoth-scrolling-->
+		<link rel="stylesheet" href="__HOME__/layui/css/layui.css" media="all">
+		<script src="__HOME__/js/jquery-1.11.1.min.js"></script>
+		<script src="__HOME__/layui/layui.js"></script>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top" style="background-color:black; padding-left: 16px;">
+			<a href="{:U('index/index')}" >
+				<img src="__LOGO__" alt="" width="80px" style="margin-top: 15px; vertical-align: 6px;" />
+			</a>
+		</nav>
+		<div class="jl-jump-page">
+			<h1>Sign Up</h1>
+			<form action="{:U('portal/public/register')}" method="post" style="color: black;">
+				<div class="jl-jump-input">
+					<input type="text" id="user" autocomplete="off" class="email" placeholder="Email" required="required" name="email"/>
+				</div>
+				<div class="jl-jump-input">
+					<input type="password" placeholder="Create a password" required="required" pattern=".{6,}" title="Minimum 6 characters required" name="user_pass" id="pw1" />
+				</div>
+				<div class="jl-jump-input">
+					<input type="password" placeholder="Confirm the password" required="required" pattern=".{6,}" title="Minimum 6 characters required" name="re_user_pass" id="pw2"/>
+				</div>
+				<div class="jl-jump-input">
+					<input type="text" class="email" placeholder="UserName" name="user_name" required="required" autocomplete="off" />
+				</div>
+				<br/>
+				<div class="layui-input-inline">
+					<input class="" type="checkbox" id="zcNanniu" checked="checked" />
+				</div>
+				<div class="layui-input-inline">
+					<a target="_blank" href="http://www.yinggui.tv/public/mobile/WZZCXY.html" style="color: #666;"> 阅读并接受《互联网服务条款》</a>
+				</div>
+
+				<br />
+				<br />
+				<input class="jl-jump-btn jl-jump-input" type="submit" value="SIGH UP" id="submit" />
+			</form>
+			<br />
+			<div class="fix jl-jump-btn-input">
+				<a  href="{:U('portal/single/denglu')}" class="rt">Sign In</a>
+			</div>
+		</div>
+
+		<script src="__HOME__/js/utility.js"></script>
+		<script>
+			$(function(){
+				commonFn.checkEmail("user"); /*检查邮箱*/
+
+				$("#pw2").on("blur", function(){
+					var pw1 = $("#pw1").val(),
+							pw2 = $("#pw2").val();
+
+					if(commonFn.isEmpty(pw1) || commonFn.isEmpty(pw2)){
+						layer.msg("密码不能为空");
+					}
+					else if(commonFn.isEqual(pw1, pw2)) {
+						$("#submit").disabled = false;
+					}
+					else{
+						layer.msg("两次密码不一致");
+						$("#submit").disabled = true;
+					}
+				});
+			})
+		</script>
+	</body>
+</html>
