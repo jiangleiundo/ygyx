@@ -1,0 +1,32 @@
+.a:hover  .b {
+	display: block;
+	/* 鼠标经过 a div 时 b div 显示*/
+}
+.c:hover .d {
+	display: block;
+	/* 鼠标经过 a div 时 b div 显示*/
+}
+.jl-user-head {
+	line-height: 38px;
+}
+.jl-user-head td > a {
+	background: none !important;
+	color: black;
+}
+.jl-user-head td:hover {
+	background-color: #ccc;
+}
+.jl-layer-01 {
+	display: none;
+}
+.jl-pc-user-v-list > a > img {
+	height: 30px;
+	width: 30px;
+}
+.jl-phone-layer {
+	width: 222px;
+	position: relative;
+	left: -150px;
+	top: 10px;
+	background-color: rgba(237,237,237,0.9);
+}

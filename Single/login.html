@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="__HOME__/assets/css/bootstrap.min.css" />
+    <link href="__HOME__/assets/css/dashboard.css" >
+    <link href="__HOME__/assets/css/style.css" />
+    <link href="__HOME__/lib/layui/css/layui.css">
+    <script src="__HOME__/assets/js/jquery-1.11.1.min.js"></script>
+    <script src="__HOME__/lib/layui/layui.js"></script>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top">
+			<a href="{:U('index/index')}" >
+				<img src="__LOGO__"/>
+			</a>
+		</nav>
+ 		<div class="jl-jump-page">
+			<h1>Sign In</h1>
+			<form action="{:U('portal/public/login')}" method="post" style="width: auto;">
+				<div class="jl-jump-input">
+					<input type="text" autocomplete="off" id="e_mail" class="email" placeholder="Enter email" required="required" pattern="([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?" name="user_name" />
+				</div>
+				<div class="jl-jump-input">
+					<input type="password" autocomplete="off" placeholder="Password" required="required" pattern=".{6,}" title="Minimum 6 characters required" autocomplete="off" name="password" />
+				</div>
+				<br />
+				<br />
+				<input class="jl-jump-btn jl-jump-input" type="submit" value="SIGN IN" />
+			</form>
+			<br />
+			<div class="fix jl-jump-btn-input">
+				<a class="lt" href="{:U('portal/single/zhaohui')}" >Forgot Password ?</a>
+				<a class="rt" href="{:U('portal/single/zhuce')}" >Sign Up</a>
+			</div>
+		</div>
+	</body>
+</html>
